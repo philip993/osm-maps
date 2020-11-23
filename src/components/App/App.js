@@ -1,3 +1,4 @@
+import Map from '../Map/Map';
 import './App.css';
 
 const App = ()  =>{
@@ -5,6 +6,7 @@ const App = ()  =>{
     <div className="App">
      
      <h1>OSM MAPS</h1>
+     <Map />
     </div>
   );
 }

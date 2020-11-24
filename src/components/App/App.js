@@ -1,14 +1,13 @@
-import Map from '../Map/Map';
-import './App.css';
+import NMap from "../Map/Map";
+import "./App.css";
 
-const App = ()  =>{
+const App = () => {
   return (
     <div className="App">
-     
-     <h1>OSM MAPS</h1>
-     <Map />
+      <h1>OSM MAPS</h1>
+      <NMap />
     </div>
   );
-}
+};
 
 export default App;

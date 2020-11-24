@@ -29,7 +29,6 @@ const Search = () => {
   return (
     <div>
       <h1>Search</h1>
-      <button onClick={handleSearch}>Search</button>
       <form onSubmit={handleSearch}>
         <input
           type="text"

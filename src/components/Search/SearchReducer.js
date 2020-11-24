@@ -10,8 +10,8 @@ const initialState = {
   searchText: "",
   searchObject: [],
   searchObjectError: null,
-  latitude: "",
-  longitude: "",
+  latitude: 51.505,
+  longitude: -0.09,
 };
 
 export const SearchReducer = (state = initialState, action) => {

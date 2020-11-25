@@ -7,6 +7,7 @@ import DisplayMap from "../DisplayMap/DisplayMap";
 import DisplayMarker from "../Marker/Marker";
 import Routing from "../Routing/Routing";
 import DisplayPolyline from "../Polyline/Polyline";
+import RouteSearch from "../RouteSearch/RouteSearch";
 
 const NMap = () => {
   const position = [51.505, -0.09];
@@ -33,6 +34,9 @@ const NMap = () => {
       </MapContainer>
       <div>
         <Search />
+      </div>
+      <div>
+        <RouteSearch />
       </div>
       <div>
         <Routing />

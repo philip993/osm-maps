@@ -35,3 +35,27 @@ export const getRouteDirections = () => {
     type: GET_ROUTE_DIRECTIONS,
   };
 };
+
+export const requestCalculateRoute = () => {
+  return (dispatch, getState) => {
+    let { startPointLat, startPointLon, endPointLat, endPointLon } = getState().RouteSearchReducer;
+
+    return axios
+      .get(
+        `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${API_KEY}&start=${startPointLon},${startPointLat},&end=${endPointLon},${endPointLat}`
+      )
+      .then((response) => {
+        console.log(response);
+        dispatch({
+          type: SUCCESS_CREATE_ROUTE,
+          payload: response.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        dispatch({
+          type: FAILURE_CREATE_ROUTE,
+        });
+      });
+  };
+};

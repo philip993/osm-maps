@@ -1,5 +1,5 @@
 import { FAILURE_GET_SEARCH_INFO } from '../Search/SearchActionTypes';
-import { FAILURE_GET_END_POINT, INPUT_SEARCH_END_POINT, INPUT_SEARCH_START_POINT, SUCCESS_GET_END_POINT, SUCCESS_GET_START_POINT } from './RouteSearchActionTypes';
+import { FAILURE_GET_END_POINT, GET_CURRENT_LOCATION, INPUT_SEARCH_END_POINT, INPUT_SEARCH_START_POINT, SUCCESS_GET_END_POINT, SUCCESS_GET_START_POINT } from './RouteSearchActionTypes';
 
 const initialState = {
     startObject: [],
@@ -9,7 +9,10 @@ const initialState = {
     startPointLat: '',
     startPointLon: '',
     endPointLat: '',
-    endPointLon: ''
+    endPointLon: '',
+    currentLocation: [],
+    currentLatitude: '',
+    currentLongitude: ''
 
 }
 
@@ -49,6 +52,13 @@ export const RouteSearchReducer = (state = initialState, action) => {
             return {
                 ...state,
                 endPoint: action.payload
+            }
+        case GET_CURRENT_LOCATION:
+            return {
+                ...state,
+                currentLocation: action.payload,
+                currentLatitude: action.payload.latitude,
+                currentLongitude: action.payload.longitude
             }
         default:
             return state;

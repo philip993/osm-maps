@@ -1,4 +1,4 @@
-import { FAILURE_GET_END_POINT, FAILURE_GET_START_POINT, INPUT_SEARCH_END_POINT, INPUT_SEARCH_START_POINT, SUCCESS_GET_END_POINT, SUCCESS_GET_START_POINT } from './RouteSearchActionTypes';
+import { FAILURE_GET_END_POINT, FAILURE_GET_START_POINT, GET_CURRENT_LOCATION, INPUT_SEARCH_END_POINT, INPUT_SEARCH_START_POINT, SUCCESS_GET_END_POINT, SUCCESS_GET_START_POINT } from './RouteSearchActionTypes';
 import axios from 'axios';
 
 export const inputStartPoint = e => {
@@ -60,3 +60,15 @@ export const requestSearchStartPoint = () => {
         });
     };
   };
+export const getCurrentLocation = () => {
+  return (dispatch, getState) => {
+    const cb = (x) => {
+      console.log(x.coords);
+      dispatch({
+        type: GET_CURRENT_LOCATION,
+        payload: x.coords,
+      });
+    };
+    let currentLocation = navigator.geolocation.getCurrentPosition(cb);
+  };
+}

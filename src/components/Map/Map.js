@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,13 +8,24 @@ import DisplayMarker from "../Marker/Marker";
 import Routing from "../Routing/Routing";
 import DisplayPolyline from "../Polyline/Polyline";
 import RouteSearch from "../RouteSearch/RouteSearch";
+import EndMarker from "../EndMarker/EndMarker";
+import StartMarker from "../StartMarker/StartMarker";
+import { getCurrentLocation } from "../RouteSearch/RouteSearchAction";
 
 const NMap = () => {
   const position = [51.505, -0.09];
-  const { latitude, longitude, coords } = useSelector((state) => ({
+  const { latitude, longitude, coords , currentLocation, currentLatitude, currentLongitude} = useSelector((state) => ({
     ...state.SearchReducer,
+    ...state.RouteSearch
   }));
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCurrentLocation())
+    console.log('map loaded')
+  }, [])
+
+  console.log(currentLocation)
 
   return (
     <div>
@@ -31,6 +42,11 @@ const NMap = () => {
         <DisplayMap />
         <DisplayMarker />
         <DisplayPolyline />
+
+        <div>
+          <StartMarker />
+          <EndMarker />
+        </div>
       </MapContainer>
       <div>
         <Search />

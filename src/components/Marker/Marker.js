@@ -3,8 +3,9 @@ import { Marker, Popup, useMapEvent } from "react-leaflet";
 import { useSelector } from "react-redux";
 
 const DisplayMarker = () => {
-  const { latitude, longitude, searchObject } = useSelector((state) => ({
+  const { latitude, longitude, searchObject, currentLocation, currentLatitude } = useSelector((state) => ({
     ...state.SearchReducer,
+    ...state.RouteSearchReducer
   }));
 
   const coords = [];

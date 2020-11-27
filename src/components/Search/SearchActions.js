@@ -2,8 +2,6 @@ import {
   INPUT_SEARCH_TEXT,
   SUCCESS_GET_SEARCH_INFO,
   FAILURE_GET_SEARCH_INFO,
-  SET_LATITUDE,
-  SET_LONGITUDE,
 } from "./SearchActionTypes";
 import axios from "axios";
 
@@ -34,17 +32,5 @@ export const inputSearchText = (e) => {
   return {
     type: INPUT_SEARCH_TEXT,
     payload: e,
-  };
-};
-
-export const setNewLatitude = () => {
-  return {
-    type: SET_LATITUDE,
-  };
-};
-
-export const setNewLongitude = () => {
-  return {
-    type: SET_LONGITUDE,
   };
 };

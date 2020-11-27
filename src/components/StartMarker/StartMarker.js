@@ -8,15 +8,18 @@ const StartMarker = () => {
   }));
 
   let coords = [];
-  coords.push(currentLatitude, currentLongitude)
+  coords.push(currentLatitude, currentLongitude);
   return (
-    <Marker position={coords}>
-      <Popup>
-        {/* {startObject.map(({ display_name }) => (
-          <h4>{display_name}</h4>
-        ))} */} START
-      </Popup>
-    </Marker>
+    <div>
+      <Marker position={coords}>
+        <Popup>
+          {/* {startObject.map(({ display_name }) => (
+            <h4>{display_name}</h4>
+          ))} */}{" "}
+          START
+        </Popup>
+      </Marker>
+    </div>
   );
 };
 

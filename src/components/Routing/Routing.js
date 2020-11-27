@@ -10,9 +10,9 @@ const Routing = () => {
 
   const handleRoute = () => {
     dispatch(requestCreateRoute());
-    setTimeout(() => {
-      dispatch(getRouteDirections());
-    }, 1000);
+    // setTimeout(() => {
+    //   dispatch(getRouteDirections());
+    // }, 1000);
   };
 
   console.log(routeDirections);

@@ -2,16 +2,14 @@ import {
   SUCCESS_GET_SEARCH_INFO,
   FAILURE_GET_SEARCH_INFO,
   INPUT_SEARCH_TEXT,
-  SET_LATITUDE,
-  SET_LONGITUDE,
 } from "./SearchActionTypes";
 
 const initialState = {
   searchText: "",
   searchObject: [],
   searchObjectError: null,
-  latitude: 51.505,
-  longitude: -0.09,
+  latCoord: "",
+  lngCoord: "",
 };
 
 export const SearchReducer = (state = initialState, action) => {
@@ -21,6 +19,8 @@ export const SearchReducer = (state = initialState, action) => {
         ...state,
         searchObject: action.payload,
         searchObjectError: false,
+        latCoord: action.payload[0].lat,
+        lngCoord: action.payload[0].lon,
       };
     case FAILURE_GET_SEARCH_INFO:
       return {
@@ -32,16 +32,6 @@ export const SearchReducer = (state = initialState, action) => {
       return {
         ...state,
         searchText: action.payload,
-      };
-    case SET_LATITUDE:
-      return {
-        ...state,
-        latitude: state.searchObject[0].lat,
-      };
-    case SET_LONGITUDE:
-      return {
-        ...state,
-        longitude: state.searchObject[0].lon,
       };
     default:
       return state;

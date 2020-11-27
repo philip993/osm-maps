@@ -5,20 +5,20 @@ import { useSelector } from "react-redux";
 const DisplayPolyline = () => {
   const limeOptions = { color: "lime" };
 
-  const { routeDirections, routeDuration, routeLength } = useSelector((state) => ({
-    ...state.RoutingReducer,
-  }));
+  const { routeDirections, routeDuration, routeLength } = useSelector(
+    (state) => ({
+      ...state.RoutingReducer,
+    })
+  );
 
-  return <Polyline pathOptions={limeOptions} positions={routeDirections}>
-    <Popup>
-      {
-        routeDuration / 60
-      }
-      {
-        routeLength
-      }
-    </Popup>
-  </Polyline>;
+  return (
+    <Polyline pathOptions={limeOptions} positions={routeDirections}>
+      <Popup>
+        {routeDuration / 60}
+        {routeLength}
+      </Popup>
+    </Polyline>
+  );
 };
 
 export default DisplayPolyline;

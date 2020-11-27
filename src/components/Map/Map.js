@@ -14,23 +14,31 @@ import { getCurrentLocation } from "../RouteSearch/RouteSearchAction";
 
 const NMap = () => {
   const position = [51.505, -0.09];
-  const { latitude, longitude, coords , currentLocation, currentLatitude, currentLongitude} = useSelector((state) => ({
+  const {
+    latitude,
+    longitude,
+    coords,
+    currentLocation,
+    currentLatitude,
+    currentLongitude,
+    latCoord,
+  } = useSelector((state) => ({
     ...state.SearchReducer,
-    ...state.RouteSearch
+    ...state.RouteSearch,
   }));
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCurrentLocation())
-    console.log('map loaded')
-  }, [])
+    dispatch(getCurrentLocation());
+    console.log("map loaded");
+  }, []);
 
-  console.log(currentLocation)
+  console.log(currentLocation);
 
   return (
     <div>
       <MapContainer
-        center={{ lat: latitude, lng: longitude }}
+        // center={{ lat: latitude, lng: longitude }}
         zoom={13}
         scrollWheelZoom={false}
         style={{ width: "500px", height: "500px", margin: "auto" }}
@@ -40,20 +48,20 @@ const NMap = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <DisplayMap />
-        <DisplayMarker />
+        {/* <DisplayMarker /> */}
         <DisplayPolyline />
 
         <div>
           <StartMarker />
-          <EndMarker />
+          {latCoord ? <EndMarker /> : "NO END MARKER SELECTED"}
         </div>
       </MapContainer>
       <div>
         <Search />
       </div>
-      <div>
+      {/* <div>
         <RouteSearch />
-      </div>
+      </div> */}
       <div>
         <Routing />
       </div>

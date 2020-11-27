@@ -8,12 +8,12 @@ const API_KEY = "5b3ce3597851110001cf624814771ee0ac454870b5974cb43f300fed";
 
 export const requestCreateRoute = () => {
   return (dispatch, getState) => {
-    let { latitude, longitude } = getState().SearchReducer;
-    let { currentLatitude, currentLongitude} = getState().RouteSearchReducer
+    let { latitude, longitude, latCoord, lngCoord } = getState().SearchReducer;
+    let { currentLatitude, currentLongitude } = getState().RouteSearchReducer;
 
     return axios
       .get(
-        `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${API_KEY}&start=${currentLongitude},${currentLatitude},&end=${longitude},${latitude}`
+        `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${API_KEY}&start=${currentLongitude},${currentLatitude},&end=${lngCoord},${latCoord}`
       )
       .then((response) => {
         console.log(response);
@@ -39,7 +39,14 @@ export const getRouteDirections = () => {
 
 export const requestCalculateRoute = () => {
   return (dispatch, getState) => {
-    let { startPointLat, startPointLon, endPointLat, endPointLon, currentLatitude, currentLongitude } = getState().RouteSearchReducer;
+    let {
+      startPointLat,
+      startPointLon,
+      endPointLat,
+      endPointLon,
+      currentLatitude,
+      currentLongitude,
+    } = getState().RouteSearchReducer;
 
     return axios
       .get(

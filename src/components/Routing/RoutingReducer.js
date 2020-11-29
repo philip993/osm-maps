@@ -9,7 +9,8 @@ const initialState = {
   routeObjectError: null,
   routeDirections: [],
   routeDuration: '',
-  routeLength: ''
+  routeLength: '',
+  routeSteps: []
 };
 
 export const RoutingReducer = (state = initialState, action) => {
@@ -23,7 +24,8 @@ export const RoutingReducer = (state = initialState, action) => {
           (t) => t.reverse()
         ),
         routeDuration: action.payload.features[0].properties.summary.duration,
-        routeLength: action.payload.features[0].properties.summary.distance
+        routeLength: action.payload.features[0].properties.summary.distance,
+        routeSteps: action.payload.features[0].properties.segments[0].steps
       };
     case FAILURE_CREATE_ROUTE:
       return {

@@ -11,6 +11,7 @@ import RouteSearch from "../RouteSearch/RouteSearch";
 import EndMarker from "../EndMarker/EndMarker";
 import StartMarker from "../StartMarker/StartMarker";
 import { getCurrentLocation } from "../RouteSearch/RouteSearchAction";
+import Directions from "../Directions/Directions";
 
 const NMap = () => {
   const position = [51.505, -0.09];
@@ -58,6 +59,7 @@ const NMap = () => {
       </MapContainer>
       <div>
         <Search />
+        <Directions />
       </div>
       {/* <div>
         <RouteSearch />

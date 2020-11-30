@@ -1,27 +1,29 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { requestCreateRoute, getRouteDirections } from "./RoutingActions";
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { requestCreateRoute, getRouteDirections } from './RoutingActions';
 
 const Routing = () => {
   const { routeObject, routeDirections } = useSelector(
-    (state) => state.RoutingReducer
+    (state) => state.RoutingReducer,
   );
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleRoute = () => {
     dispatch(requestCreateRoute());
-    // setTimeout(() => {
-    //   dispatch(getRouteDirections());
-    // }, 1000);
+    setTimeout(() => {
+      history.push('/');
+    }, 1000);
   };
 
   console.log(routeDirections);
 
   return (
-    <div>
-      <h1>Routing</h1>
-      <button onClick={handleRoute}>Get Route</button>
-    </div>
+    <Button className="button" variant="success" onClick={handleRoute}>
+      Get Route
+    </Button>
   );
 };
 

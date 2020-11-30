@@ -2,6 +2,7 @@ import {
   INPUT_SEARCH_TEXT,
   SUCCESS_GET_SEARCH_INFO,
   FAILURE_GET_SEARCH_INFO,
+  CLEAR_INPUT_SEARCH_TEXT,
 } from "./SearchActionTypes";
 import axios from "axios";
 
@@ -34,3 +35,9 @@ export const inputSearchText = (e) => {
     payload: e,
   };
 };
+
+export const clearInputSearchText = () => {
+  return {
+    type: CLEAR_INPUT_SEARCH_TEXT
+  }
+}

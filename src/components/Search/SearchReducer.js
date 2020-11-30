@@ -2,6 +2,7 @@ import {
   SUCCESS_GET_SEARCH_INFO,
   FAILURE_GET_SEARCH_INFO,
   INPUT_SEARCH_TEXT,
+  CLEAR_INPUT_SEARCH_TEXT,
 } from "./SearchActionTypes";
 
 const initialState = {
@@ -33,6 +34,15 @@ export const SearchReducer = (state = initialState, action) => {
         ...state,
         searchText: action.payload,
       };
+    case CLEAR_INPUT_SEARCH_TEXT:
+      return {
+        ...state,
+        searchText: '',
+        searchObject: null,
+        searchObjectError: null,
+        latCoord: "",
+        lngCoord: "",
+      }
     default:
       return state;
   }

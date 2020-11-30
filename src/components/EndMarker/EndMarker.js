@@ -21,7 +21,7 @@ const EndMarker = () => {
   return (
     <Marker position={coords}>
       <Popup>
-        {searchObject.map(({ display_name }) => (
+        {!searchObject ? '' : searchObject.map(({ display_name }) => (
           <h4>{display_name}</h4>
         ))}
       </Popup>

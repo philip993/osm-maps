@@ -1,0 +1,36 @@
+.search {
+  .searchForm {
+    width: 400px;
+    margin: auto;
+    border: 1px solid #232623;
+    background-color: #424842;
+    border-radius: 5px;
+    padding: 2%;
+    color: #fff;
+
+    .formGroup {
+      .searchLabel {
+        font-weight: bold;
+        size: 2rem;
+      }
+    }
+
+    .formGroupBtn {
+      margin: auto;
+
+      .searchBtn,
+      .clearBtn {
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 40%;
+        border: 1px solid #fff;
+      }
+    }
+  }
+
+  .card {
+    width: 50%;
+    margin: auto;
+    margin-top: 2%;
+  }
+}

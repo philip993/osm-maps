@@ -1,6 +1,6 @@
-import React from "react";
-import { Marker, Popup } from "react-leaflet";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { Marker, Popup } from 'react-leaflet';
+import { useSelector } from 'react-redux';
 
 const StartMarker = () => {
   const { currentLatitude, currentLongitude } = useSelector((state) => ({
@@ -15,7 +15,7 @@ const StartMarker = () => {
         <Popup>
           {/* {startObject.map(({ display_name }) => (
             <h4>{display_name}</h4>
-          ))} */}{" "}
+          ))} */}{' '}
           START
         </Popup>
       </Marker>

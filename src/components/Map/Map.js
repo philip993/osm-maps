@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
+import './MapStyle.scss';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import { getCurrentLocation } from '../RouteSearch/RouteSearchAction';
 
 import DisplayMap from '../DisplayMap/DisplayMap';
 import DisplayPolyline from '../Polyline/Polyline';
 import EndMarker from '../EndMarker/EndMarker';
 import StartMarker from '../StartMarker/StartMarker';
 import Directions from '../Directions/Directions';
-import { getCurrentLocation } from '../RouteSearch/RouteSearchAction';
 
 const NMap = () => {
   const {
@@ -32,12 +33,8 @@ const NMap = () => {
   console.log(currentLocation);
 
   return (
-    <div>
-      <MapContainer
-        zoom={13}
-        scrollWheelZoom={false}
-        style={{ width: '500px', height: '500px', margin: 'auto' }}
-      >
+    <div className="map">
+      <MapContainer className="mapContainer" zoom={13} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

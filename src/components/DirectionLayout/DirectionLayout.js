@@ -1,15 +1,22 @@
 import React from 'react';
+import './DirectionLayoutStyle.scss';
+import { ListGroup } from 'react-bootstrap';
 
 const DirectionLayout = ({ distance, duration, instruction, name }) => {
-
-    return (
-        <div>
-            <h4>{distance}</h4>
-            <h4>{duration}</h4>
-            <h4>{instruction}</h4>
-            <h4>{name}</h4>
-        </div>
-    )
-}
+  return (
+    <div className="directionLayout">
+      <ListGroup as="ul" className="listGroup">
+        <ListGroup.Item as="li" active>
+          {instruction}
+        </ListGroup.Item>
+        <ListGroup.Item as="li">{name}</ListGroup.Item>
+        <ListGroup.Item as="li" disabled>
+          {distance} Mt
+        </ListGroup.Item>
+        <ListGroup.Item as="li">{duration} seconds</ListGroup.Item>
+      </ListGroup>
+    </div>
+  );
+};
 
 export default DirectionLayout;

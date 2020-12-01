@@ -1,0 +1,27 @@
+.directionLayout {
+  width: 50%;
+  margin: auto;
+  padding-top: 2%;
+
+  .listGroup {
+  }
+}
+
+@media all and (max-width: 720px) {
+  .directionLayout {
+    width: 100%;
+    padding-top: 0%;
+  }
+}
+
+@media all and (min-width: 720px) and (max-width: 1400px) {
+  .directionLayout {
+    width: 70%;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .directionLayout {
+    width: 40%;
+  }
+}

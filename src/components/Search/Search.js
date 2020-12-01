@@ -11,7 +11,7 @@ import Routing from '../Routing/Routing';
 
 const Search = () => {
   const { searchObject, searchText } = useSelector(
-    (state) => state.SearchReducer,
+    (state) => state.SearchReducer
   );
   const dispatch = useDispatch();
 
@@ -30,11 +30,11 @@ const Search = () => {
 
   return (
     <div className="search">
-      <h1>Search</h1>
       <Form className="searchForm" onSubmit={handleSearch}>
-        <Form.Label className="formLabel">Search for</Form.Label>
+        <h2>Search</h2>
         <Form.Group className="formGroup">
           <Form.Control
+            className="formInput"
             size="lg"
             required
             type="text"
@@ -44,7 +44,7 @@ const Search = () => {
           />
         </Form.Group>
         <Form.Group className="formGroupBtn">
-          <Button className="searchBtn" variant="primary" type="submit">
+          <Button className="searchBtn" variant="info" type="submit">
             Search
           </Button>
           <Button
@@ -65,7 +65,7 @@ const Search = () => {
               <Card.Body className="cardBody">
                 <Card.Title className="cardTitle">{s.display_name}</Card.Title>
                 <Card.Text className="cardText">
-                  Lat: {s.lat} Lng: {s.lng}
+                  Lat: {s.lat} Lng: {s.lon}
                 </Card.Text>
                 <Routing />
               </Card.Body>

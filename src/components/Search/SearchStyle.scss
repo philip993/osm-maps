@@ -1,17 +1,23 @@
 .search {
   .searchForm {
-    width: 400px;
+    width: 30%;
     margin: auto;
     border: 1px solid #232623;
     background-color: #424842;
     border-radius: 5px;
     padding: 2%;
     color: #fff;
+    margin-top: 2%;
+
+    h2 {
+      letter-spacing: 1px;
+      color: darkorange;
+      margin-top: -3%;
+      margin-bottom: 10%;
+    }
 
     .formGroup {
-      .searchLabel {
-        font-weight: bold;
-        size: 2rem;
+      .formInput {
       }
     }
 
@@ -22,15 +28,118 @@
       .clearBtn {
         margin-left: 2%;
         margin-right: 2%;
+        margin-top: 4%;
+        margin-bottom: -3%;
         width: 40%;
-        border: 1px solid #fff;
+
+        &:hover {
+          box-shadow: 0px 0px 5px #fff;
+        }
       }
     }
   }
 
   .card {
-    width: 50%;
+    width: 40%;
     margin: auto;
-    margin-top: 2%;
+    margin-top: 4%;
+    border: 1px solid #424842;
+    .cardHeader {
+      background-color: #424842;
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// FKIN RESOLUTION
+@media all and (min-width: 1800px) {
+  .search {
+    // width: 90%;
+
+    .searchForm {
+      width: 25%;
+    }
+
+    .card {
+      width: 40%;
+    }
+  }
+}
+
+@media all and (min-width: 1200px) and (max-width: 1800px) {
+  .search {
+    // width: 90%;
+
+    .searchForm {
+      width: 35%;
+    }
+
+    .card {
+      width: 60%;
+    }
+  }
+}
+
+// FROM IPAD TO BIGGER SCREENS
+@media all and (min-width: 720px) and (max-width: 1200px) {
+  .search {
+    // width: 90%;
+
+    .searchForm {
+      width: 50%;
+    }
+
+    .card {
+      width: 60%;
+    }
+  }
+}
+// MIDDLE
+@media all and (max-width: 720px) {
+  .search {
+    // width: 90%;
+
+    .searchForm {
+      width: 50%;
+    }
+
+    .card {
+      width: 80%;
+    }
+  }
+}
+
+// LOWEST MOBILES
+@media all and (max-width: 540px) {
+  .search {
+    // width: 90%;
+
+    .searchForm {
+      width: 80%;
+
+      h2 {
+        margin-top: 1%;
+      }
+
+      .formGroupBtn {
+        margin: auto;
+
+        .searchBtn,
+        .clearBtn {
+          margin-left: 2%;
+          margin-right: 2%;
+          margin-top: 4%;
+          margin-bottom: 1%;
+          width: 40%;
+        }
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
   }
 }

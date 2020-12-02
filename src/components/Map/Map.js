@@ -11,17 +11,9 @@ import StartMarker from '../StartMarker/StartMarker';
 import Directions from '../Directions/Directions';
 
 const NMap = () => {
-  const {
-    latitude,
-    longitude,
-    coords,
-    currentLocation,
-    currentLatitude,
-    currentLongitude,
-    latCoord,
-  } = useSelector((state) => ({
+  const { currentLocation, latCoord } = useSelector((state) => ({
     ...state.SearchReducer,
-    ...state.RouteSearch,
+    ...state.RoutingReducer,
   }));
   const dispatch = useDispatch();
 

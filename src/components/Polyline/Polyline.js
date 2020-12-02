@@ -1,9 +1,9 @@
-import React from "react";
-import { Polyline, Popup } from "react-leaflet";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { Polyline, Popup } from 'react-leaflet';
+import { useSelector } from 'react-redux';
 
 const DisplayPolyline = () => {
-  const limeOptions = { color: "lime" };
+  const limeOptions = { color: 'lime' };
 
   const { routeDirections, routeDuration, routeLength } = useSelector(
     (state) => ({
@@ -14,8 +14,9 @@ const DisplayPolyline = () => {
   return (
     <Polyline pathOptions={limeOptions} positions={routeDirections}>
       <Popup>
-        {routeDuration / 60}
-        {routeLength}
+        {routeDuration / 60} minutes
+        <br />
+        {(routeLength / 1000).toFixed(2)} KM
       </Popup>
     </Polyline>
   );

@@ -2,9 +2,9 @@ import {
   SUCCESS_CREATE_ROUTE,
   FAILURE_CREATE_ROUTE,
   GET_ROUTE_DIRECTIONS,
-} from "./RoutingActionTypes";
-import axios from "axios";
-const API_KEY = "5b3ce3597851110001cf624814771ee0ac454870b5974cb43f300fed";
+} from './RoutingActionTypes';
+import axios from 'axios';
+const API_KEY = '5b3ce3597851110001cf624814771ee0ac454870b5974cb43f300fed';
 
 export const requestCreateRoute = () => {
   return (dispatch, getState) => {

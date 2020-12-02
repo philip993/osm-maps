@@ -2,7 +2,7 @@ import {
   SUCCESS_CREATE_ROUTE,
   FAILURE_CREATE_ROUTE,
   GET_ROUTE_DIRECTIONS,
-} from "./RoutingActionTypes";
+} from './RoutingActionTypes';
 
 const initialState = {
   routeObject: [],
@@ -10,7 +10,8 @@ const initialState = {
   routeDirections: [],
   routeDuration: '',
   routeLength: '',
-  routeSteps: []
+  routeSteps: [],
+  wayPoint: [],
 };
 
 export const RoutingReducer = (state = initialState, action) => {
@@ -23,9 +24,12 @@ export const RoutingReducer = (state = initialState, action) => {
         routeDirections: action.payload.features[0].geometry.coordinates.map(
           (t) => t.reverse()
         ),
+        wayPoint: action.payload.features[0].properties.segments[0].steps.map(
+          (t) => t.way_points
+        ),
         routeDuration: action.payload.features[0].properties.summary.duration,
         routeLength: action.payload.features[0].properties.summary.distance,
-        routeSteps: action.payload.features[0].properties.segments[0].steps
+        routeSteps: action.payload.features[0].properties.segments[0].steps,
       };
     case FAILURE_CREATE_ROUTE:
       return {

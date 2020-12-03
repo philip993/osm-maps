@@ -8,6 +8,15 @@
 
     .brand,
     #two {
+      .icon {
+        height: 30px;
+        width: 30px;
+        color: #48aaad;
+
+        &:hover {
+          color: darkorange;
+        }
+      }
       .link {
         text-decoration: none;
         color: #48aaad;

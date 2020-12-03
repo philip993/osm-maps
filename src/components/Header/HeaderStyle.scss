@@ -1,0 +1,63 @@
+.header {
+  height: 64px;
+  width: 100%;
+
+  .navbar {
+    height: 64px;
+    width: 100%;
+
+    .brand,
+    #two {
+      .icon {
+        height: 30px;
+        width: 30px;
+        color: #48aaad;
+
+        &:hover {
+          color: darkorange;
+        }
+      }
+      .link {
+        text-decoration: none;
+        color: #48aaad;
+        font-weight: bold;
+
+        &:hover {
+          color: darkorange;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 720px) {
+  .header {
+    height: 128px;
+    width: 100%;
+    .navbar {
+      height: 128px;
+      width: 100%;
+      display: inline-block;
+
+      .brand {
+        float: left;
+      }
+
+      #two {
+        float: right;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 721px) {
+  .header {
+    .navbar {
+      .one {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+}

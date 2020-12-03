@@ -1,0 +1,88 @@
+.search {
+  #f {
+    .formInput {
+      margin-right: 5px;
+    }
+
+    .searchBtn {
+      &:hover {
+        box-shadow: 0px 0px 5px #fff;
+      }
+    }
+  }
+}
+
+#modal {
+  margin-top: 15%;
+  #header {
+    background-color: #2b2d2f;
+    border: 1px solid #2b2d2f;
+    position: relative;
+    #title {
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    #icon {
+      color: #d21404;
+      position: absolute;
+      right: 0;
+      margin-right: 4%;
+      margin-top: 1%;
+    }
+  }
+  #body {
+    background-color: #2b2d2f;
+  }
+  #card {
+    background-color: #3a3b3c;
+    color: #fff;
+    border: 1px solid #fff;
+    margin: auto;
+
+    #cardText {
+      color: orange;
+    }
+  }
+}
+
+// FHD
+@media all and (min-width: 1800px) {
+  .search {
+    #f {
+      .formInput {
+        margin-right: 10px;
+      }
+    }
+  }
+  #modal {
+    margin-top: 15%;
+  }
+}
+
+// MOBILE
+@media all and (max-width: 720px) {
+  .search {
+    #f {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+
+      .formInput {
+        margin-top: 5%;
+        width: 60%;
+      }
+
+      .searchBtn {
+        margin-left: 1%;
+        margin-top: 5%;
+        width: 40%;
+      }
+    }
+  }
+  #modal {
+    margin-top: 40%;
+  }
+}

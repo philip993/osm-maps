@@ -1,0 +1,16 @@
+.about {
+  height: calc(100vh - 64px);
+  .jumbotron {
+    height: 100%;
+  }
+}
+
+@media all and (max-width: 720px) {
+  .about {
+    height: calc(100vh - 128px);
+
+    .jumbotron {
+      height: 100%;
+    }
+  }
+}

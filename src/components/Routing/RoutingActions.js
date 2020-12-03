@@ -2,6 +2,8 @@ import {
   SUCCESS_CREATE_ROUTE,
   FAILURE_CREATE_ROUTE,
   GET_ROUTE_DIRECTIONS,
+  TOGGLE_MODAL_STEPS_ON,
+  TOGGLE_MODAL_STEPS_OFF,
 } from './RoutingActionTypes';
 import axios from 'axios';
 const API_KEY = '5b3ce3597851110001cf624814771ee0ac454870b5974cb43f300fed';
@@ -65,5 +67,17 @@ export const requestCalculateRoute = () => {
           type: FAILURE_CREATE_ROUTE,
         });
       });
+  };
+};
+
+export const toggleModalOn = () => {
+  return {
+    type: TOGGLE_MODAL_STEPS_ON,
+  };
+};
+
+export const toggleModalOff = () => {
+  return {
+    type: TOGGLE_MODAL_STEPS_OFF,
   };
 };

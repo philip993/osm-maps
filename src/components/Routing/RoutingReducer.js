@@ -2,6 +2,8 @@ import {
   SUCCESS_CREATE_ROUTE,
   FAILURE_CREATE_ROUTE,
   GET_ROUTE_DIRECTIONS,
+  TOGGLE_MODAL_STEPS_ON,
+  TOGGLE_MODAL_STEPS_OFF,
 } from './RoutingActionTypes';
 
 const initialState = {
@@ -12,6 +14,7 @@ const initialState = {
   routeLength: '',
   routeSteps: [],
   wayPoint: [],
+  showModal: false,
 };
 
 export const RoutingReducer = (state = initialState, action) => {
@@ -43,6 +46,16 @@ export const RoutingReducer = (state = initialState, action) => {
         routeDirections: state.routeObject.features[0].geometry.coordinates.map(
           (t) => t.reverse()
         ),
+      };
+    case TOGGLE_MODAL_STEPS_ON:
+      return {
+        ...state,
+        showModal: true,
+      };
+    case TOGGLE_MODAL_STEPS_OFF:
+      return {
+        ...state,
+        showModal: false,
       };
     default:
       return state;

@@ -1,22 +1,16 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import './RoutingStyle.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { requestCreateRoute, getRouteDirections } from './RoutingActions';
+import './RoutingStyle.scss';
+import { Button } from 'react-bootstrap';
+import { requestCreateRoute, toggleModalOff } from './RoutingActions';
 
 const Routing = () => {
-  const { routeObject, routeDirections } = useSelector(
-    (state) => state.RoutingReducer
-  );
+  const { routeDirections } = useSelector((state) => state.RoutingReducer);
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const handleRoute = () => {
     dispatch(requestCreateRoute());
-    setTimeout(() => {
-      history.push('/');
-    }, 1000);
+    dispatch(toggleModalOff());
   };
 
   console.log(routeDirections);

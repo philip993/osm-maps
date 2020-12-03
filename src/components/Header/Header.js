@@ -1,23 +1,24 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import './HeaderStyle.scss';
 import { Link } from 'react-router-dom';
+import Search from '../Search/Search';
 
 const Header = () => {
   return (
-    <div>
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand>
-          <Link to="/">OSM</Link>
+    <div className="header">
+      <Navbar bg="dark" variant="dark" className="navbar">
+        <Navbar.Brand className="brand">
+          <Link className="link" to="/">
+            OSM
+          </Link>
         </Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link>
-            <Link to="/">Map</Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link to="/routing">Routing</Link>
-          </Nav.Link>
-          <Nav.Link to="/about">About</Nav.Link>
-        </Nav>
+        <Navbar.Brand id="two">
+          <Link to="/about">About</Link>
+        </Navbar.Brand>
+        <div className="one">
+          <Search />
+        </div>
       </Navbar>
     </div>
   );

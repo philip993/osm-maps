@@ -1,0 +1,29 @@
+.header {
+  height: 64px;
+  width: 100%;
+
+  .navbar {
+    height: 64px;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 720px) {
+  .header {
+    height: 128px;
+    width: 100%;
+    .navbar {
+      height: 128px;
+      width: 100%;
+      display: inline-block;
+
+      .brand {
+        float: left;
+      }
+
+      #two {
+        float: right;
+      }
+    }
+  }
+}

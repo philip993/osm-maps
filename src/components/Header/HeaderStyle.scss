@@ -5,6 +5,19 @@
   .navbar {
     height: 64px;
     width: 100%;
+
+    .brand,
+    #two {
+      .link {
+        text-decoration: none;
+        color: #48aaad;
+        font-weight: bold;
+
+        &:hover {
+          color: darkorange;
+        }
+      }
+    }
   }
 }
 
@@ -23,6 +36,18 @@
 
       #two {
         float: right;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 721px) {
+  .header {
+    .navbar {
+      .one {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
       }
     }
   }

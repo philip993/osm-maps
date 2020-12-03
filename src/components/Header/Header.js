@@ -14,7 +14,9 @@ const Header = () => {
           </Link>
         </Navbar.Brand>
         <Navbar.Brand id="two">
-          <Link to="/about">About</Link>
+          <Link to="/about" className="link">
+            About
+          </Link>
         </Navbar.Brand>
         <div className="one">
           <Search />

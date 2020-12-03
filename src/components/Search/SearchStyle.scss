@@ -1,40 +1,63 @@
 .search {
   #f {
-    // .searchBtn,
-    // .clearBtn {
-    //   margin-left: 2%;
-    //   margin-right: 2%;
-    //   margin-top: 4%;
-    //   margin-bottom: -3%;
-    //   width: 40%;
+    .formInput {
+      margin-right: 5px;
+    }
 
-    //   &:hover {
-    //     box-shadow: 0px 0px 5px #fff;
-    //   }
-
-    // }
-  }
-
-  #modal {
-    width: 40%;
-    margin: auto;
-    margin-top: 4%;
-    border: 1px solid #424842;
-    .cardHeader {
-      background-color: #424842;
-      color: #fff;
-      font-weight: bold;
-      letter-spacing: 1px;
-      font-size: 1.2rem;
+    .searchBtn {
+      &:hover {
+        box-shadow: 0px 0px 5px #fff;
+      }
     }
   }
 }
 
+#modal {
+  margin-top: 15%;
+  #header {
+    background-color: #2b2d2f;
+    border: 1px solid #2b2d2f;
+    position: relative;
+    #title {
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    #icon {
+      color: #d21404;
+      position: absolute;
+      right: 0;
+      margin-right: 4%;
+      margin-top: 1%;
+    }
+  }
+  #body {
+    background-color: #2b2d2f;
+  }
+  #card {
+    background-color: #3a3b3c;
+    color: #fff;
+    border: 1px solid #fff;
+    margin: auto;
+
+    #cardText {
+      color: orange;
+    }
+  }
+}
+
+// FHD
 @media all and (min-width: 1800px) {
   .search {
-    .card {
-      width: 40%;
+    #f {
+      .formInput {
+        margin-right: 10px;
+      }
     }
+  }
+  #modal {
+    margin-top: 15%;
   }
 }
 
@@ -53,17 +76,13 @@
       }
 
       .searchBtn {
+        margin-left: 1%;
         margin-top: 5%;
         width: 40%;
       }
     }
-
-    #modal {
-      margin-top: 50px;
-    }
-
-    .card {
-      width: 80%;
-    }
+  }
+  #modal {
+    margin-top: 40%;
   }
 }

@@ -1,14 +1,16 @@
 import React from 'react';
-import { Form, Button, Card, Modal } from 'react-bootstrap';
-import './SearchStyle.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import './SearchStyle.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Form, Button, Card, Modal } from 'react-bootstrap';
 import {
   clearInputSearchText,
   inputSearchText,
   requestSearchText,
 } from './SearchActions';
-import Routing from '../Routing/Routing';
 import { toggleModalOff, toggleModalOn } from '../Routing/RoutingActions';
+import Routing from '../Routing/Routing';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Search = () => {
   const { searchObject, searchText, showModal } = useSelector((state) => ({
@@ -58,35 +60,31 @@ const Search = () => {
       <Modal
         show={showModal}
         onHide={handleModalOff}
-        dialogClassName="modal-90w"
-        // aria-labelledby="example-custom-modal-styling-title"
+        aria-labelledby="modal"
         id="modal"
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="modalTitle">Search Result</Modal.Title>
+        <Modal.Header id="header">
+          <Modal.Title id="title">Search Result</Modal.Title>
+
+          <FontAwesomeIcon
+            onClick={handleClearSearchInput}
+            size="2x"
+            icon={faTimes}
+            id="icon"
+          />
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body id="body">
           {!searchObject
             ? ''
             : searchObject.map((s) => (
-                <Card className="card">
-                  <Card.Body className="cardBody">
-                    <Card.Title className="cardTitle">
-                      {s.display_name}
-                    </Card.Title>
-                    <Card.Text className="cardText">
+                <Card id="card">
+                  <Card.Body id="cardBody">
+                    <Card.Title>{s.display_name}</Card.Title>
+                    <Card.Text id="cardText">
                       Lat: {s.lat} Lng: {s.lon}
                     </Card.Text>
-                    <Routing />
-                    <Button
-                      className="clearBtn"
-                      variant="danger"
-                      type="button"
-                      onClick={handleClearSearchInput}
-                    >
-                      Clear
-                    </Button>
                   </Card.Body>
+                  <Routing />
                 </Card>
               ))}
         </Modal.Body>

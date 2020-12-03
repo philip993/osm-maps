@@ -6,20 +6,29 @@
   }
 }
 
-@media all and (max-width: 540px) {
+@media all and (max-width: 720px) {
   .button {
-    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 0.9rem;
   }
 }
 
 @media all and (max-width: 1024px) {
   .button {
-    width: 50%;
+    width: 40%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 }
 
 @media all and (min-width: 1800px) {
   .button {
-    width: 30%;
+    width: 40%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 }

@@ -1,45 +1,21 @@
 .search {
-  .searchForm {
-    width: 30%;
-    margin: auto;
-    border: 1px solid #232623;
-    background-color: #424842;
-    border-radius: 5px;
-    padding: 2%;
-    color: #fff;
-    margin-top: 2%;
+  #f {
+    // .searchBtn,
+    // .clearBtn {
+    //   margin-left: 2%;
+    //   margin-right: 2%;
+    //   margin-top: 4%;
+    //   margin-bottom: -3%;
+    //   width: 40%;
 
-    h2 {
-      letter-spacing: 1px;
-      color: darkorange;
-      margin-top: -3%;
-      margin-bottom: 10%;
-    }
+    //   &:hover {
+    //     box-shadow: 0px 0px 5px #fff;
+    //   }
 
-    .formGroup {
-      .formInput {
-      }
-    }
-
-    .formGroupBtn {
-      margin: auto;
-
-      .searchBtn,
-      .clearBtn {
-        margin-left: 2%;
-        margin-right: 2%;
-        margin-top: 4%;
-        margin-bottom: -3%;
-        width: 40%;
-
-        &:hover {
-          box-shadow: 0px 0px 5px #fff;
-        }
-      }
-    }
+    // }
   }
 
-  .card {
+  #modal {
     width: 40%;
     margin: auto;
     margin-top: 4%;
@@ -54,92 +30,40 @@
   }
 }
 
-// FKIN RESOLUTION
 @media all and (min-width: 1800px) {
   .search {
-    // width: 90%;
-
-    .searchForm {
-      width: 25%;
-    }
-
     .card {
       width: 40%;
     }
   }
 }
 
-@media all and (min-width: 1200px) and (max-width: 1800px) {
-  .search {
-    // width: 90%;
-
-    .searchForm {
-      width: 35%;
-    }
-
-    .card {
-      width: 60%;
-    }
-  }
-}
-
-// FROM IPAD TO BIGGER SCREENS
-@media all and (min-width: 720px) and (max-width: 1200px) {
-  .search {
-    // width: 90%;
-
-    .searchForm {
-      width: 50%;
-    }
-
-    .card {
-      width: 60%;
-    }
-  }
-}
-// MIDDLE
+// MOBILE
 @media all and (max-width: 720px) {
   .search {
-    // width: 90%;
+    #f {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
 
-    .searchForm {
-      width: 50%;
+      .formInput {
+        margin-top: 5%;
+        width: 60%;
+      }
+
+      .searchBtn {
+        margin-top: 5%;
+        width: 40%;
+      }
+    }
+
+    #modal {
+      margin-top: 50px;
     }
 
     .card {
       width: 80%;
-    }
-  }
-}
-
-// LOWEST MOBILES
-@media all and (max-width: 540px) {
-  .search {
-    // width: 90%;
-
-    .searchForm {
-      width: 80%;
-
-      h2 {
-        margin-top: 1%;
-      }
-
-      .formGroupBtn {
-        margin: auto;
-
-        .searchBtn,
-        .clearBtn {
-          margin-left: 2%;
-          margin-right: 2%;
-          margin-top: 4%;
-          margin-bottom: 1%;
-          width: 40%;
-        }
-      }
-
-      .card {
-        width: 100%;
-      }
     }
   }
 }

@@ -32,6 +32,9 @@ const Header = () => {
           <Link to="/about" className="link">
             About
           </Link>
+          <Link to="/pois" className="link">
+            POIs
+          </Link>
         </Navbar.Brand>
         <div className="one">
           <Search />

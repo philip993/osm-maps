@@ -9,6 +9,7 @@ import DisplayPolyline from '../Polyline/Polyline';
 import EndMarker from '../EndMarker/EndMarker';
 import StartMarker from '../StartMarker/StartMarker';
 import Directions from '../Directions/Directions';
+import Circle from '../Circle/Circle';
 
 const NMap = () => {
   const { currentLocation, latCoord } = useSelector((state) => ({
@@ -33,7 +34,7 @@ const NMap = () => {
         />
         <DisplayMap />
         <DisplayPolyline />
-
+        <Circle />
         <div>
           <StartMarker />
           {latCoord ? <EndMarker /> : 'NO END MARKER SELECTED'}

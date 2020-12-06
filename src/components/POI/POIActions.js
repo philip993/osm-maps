@@ -6,21 +6,30 @@ import axios from 'axios';
 
 export const requestCreatePOISearch = () => {
   return (dispatch, getState) => {
+    let { searchObject, latCoord, lngCoord } = getState().SearchReducer;
+    let bx0 = parseFloat(searchObject[0].boundingbox[0]);
+    let bx1 = parseFloat(searchObject[0].boundingbox[2]);
+    let bx2 = parseFloat(searchObject[0].boundingbox[1]);
+    let bx3 = parseFloat(searchObject[0].boundingbox[3]);
+    let coords = [];
+    let bxX = [];
+    let bxZ = [];
+    bxX.push(bx1, bx0);
+    bxZ.push(bx3, bx2);
+    coords.push(parseFloat(lngCoord), parseFloat(latCoord));
+    console.log(coords);
     return axios
       .post(
         `https://api.openrouteservice.org/pois/?api_key=5b3ce3597851110001cf624814771ee0ac454870b5974cb43f300fed`,
         {
           request: 'pois',
           geometry: {
-            bbox: [
-              [8.8034, 53.0756],
-              [8.7834, 53.0456],
-            ],
+            bbox: [bxZ, coords],
             geojson: {
               type: 'Point',
-              coordinates: [8.8034, 53.0756],
+              coordinates: coords,
             },
-            buffer: 200,
+            buffer: 500,
           },
         }
       )
@@ -33,6 +42,7 @@ export const requestCreatePOISearch = () => {
       })
       .catch((err) => {
         console.log(err);
+        console.error(err);
         dispatch({
           type: FAILURE_CREATE_POI_SEARCH,
         });

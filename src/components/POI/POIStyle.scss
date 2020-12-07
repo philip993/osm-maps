@@ -1,0 +1,30 @@
+.pois {
+  margin: auto;
+  height: 100vh;
+
+  li {
+    list-style-type: none;
+    width: 100%;
+    border: 1px solid #000;
+    width: 30%;
+    margin: auto;
+  }
+
+  ul {
+    width: 20%;
+    list-style-type: none;
+    display: inline-block;
+
+    li {
+      margin: auto;
+      border: 1px solid #000;
+      margin: 2%;
+      width: 100%;
+      min-height: 50px;
+      text-align: center;
+
+      &:hover {
+      }
+    }
+  }
+}

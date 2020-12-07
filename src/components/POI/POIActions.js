@@ -1,6 +1,10 @@
 import {
   SUCCESS_CREATE_POI_SEARCH,
   FAILURE_CREATE_POI_SEARCH,
+  SELECT_CATEGORY_FILTER,
+  CLEAR_CATEGORY_FILTER,
+  TOGGLE_OPTIONS_TRUE,
+  TOGGLE_OPTIONS_FALSE,
 } from './POIActionTypes';
 import axios from 'axios';
 
@@ -29,7 +33,7 @@ export const requestCreatePOISearch = () => {
               type: 'Point',
               coordinates: coords,
             },
-            buffer: 500,
+            buffer: 1000,
           },
         }
       )
@@ -47,5 +51,30 @@ export const requestCreatePOISearch = () => {
           type: FAILURE_CREATE_POI_SEARCH,
         });
       });
+  };
+};
+
+export const selectCategoryFilter = (e) => {
+  return {
+    type: SELECT_CATEGORY_FILTER,
+    payload: e,
+  };
+};
+
+export const clearCategoryFilter = () => {
+  return {
+    type: CLEAR_CATEGORY_FILTER,
+  };
+};
+
+export const toggleOptionsTrue = () => {
+  return {
+    type: TOGGLE_OPTIONS_TRUE,
+  };
+};
+
+export const toggleOptionsFalse = () => {
+  return {
+    type: TOGGLE_OPTIONS_FALSE,
   };
 };

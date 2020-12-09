@@ -5,6 +5,8 @@ import {
   CLEAR_CATEGORY_FILTER,
   TOGGLE_OPTIONS_TRUE,
   TOGGLE_OPTIONS_FALSE,
+  POI_MODAL_VISIBLE,
+  POI_MODAL_NOT_VISIBLE,
 } from './POIActionTypes';
 import axios from 'axios';
 
@@ -76,5 +78,17 @@ export const toggleOptionsTrue = () => {
 export const toggleOptionsFalse = () => {
   return {
     type: TOGGLE_OPTIONS_FALSE,
+  };
+};
+
+export const poiModalVisible = () => {
+  return {
+    type: POI_MODAL_VISIBLE,
+  };
+};
+
+export const poiModalNotVisible = () => {
+  return {
+    type: POI_MODAL_NOT_VISIBLE,
   };
 };

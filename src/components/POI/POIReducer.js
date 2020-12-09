@@ -5,6 +5,8 @@ import {
   CLEAR_CATEGORY_FILTER,
   TOGGLE_OPTIONS_TRUE,
   TOGGLE_OPTIONS_FALSE,
+  POI_MODAL_VISIBLE,
+  POI_MODAL_NOT_VISIBLE,
 } from './POIActionTypes';
 
 const initialState = {
@@ -13,6 +15,7 @@ const initialState = {
   poiPlaces: [],
   poiSearchCategory: '',
   poiResult: null,
+  poiModal: null,
 };
 
 export const POIReducer = (state = initialState, action) => {
@@ -49,6 +52,16 @@ export const POIReducer = (state = initialState, action) => {
       return {
         ...state,
         poiResult: false,
+      };
+    case POI_MODAL_VISIBLE:
+      return {
+        ...state,
+        poiModal: true,
+      };
+    case POI_MODAL_NOT_VISIBLE:
+      return {
+        ...state,
+        poiModal: false,
       };
     default:
       return state;

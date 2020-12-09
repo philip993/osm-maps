@@ -11,6 +11,11 @@ import {
 import { toggleModalOff, toggleModalOn } from '../Routing/RoutingActions';
 import Routing from '../Routing/Routing';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+  requestCreatePOISearch,
+  toggleOptionsTrue,
+  poiModalNotVisible,
+} from '../POI/POIActions';
 
 const Search = () => {
   const { searchObject, searchText, showModal } = useSelector((state) => ({
@@ -26,6 +31,7 @@ const Search = () => {
   const handleClearSearchInput = () => {
     dispatch(clearInputSearchText());
     dispatch(toggleModalOff());
+    dispatch(poiModalNotVisible());
   };
 
   const handleModalOff = () => {
@@ -36,6 +42,12 @@ const Search = () => {
     e.preventDefault();
     dispatch(requestSearchText());
     dispatch(toggleModalOn());
+  };
+
+  const handleSearchPOIs = () => {
+    dispatch(requestCreatePOISearch());
+    dispatch(toggleModalOff());
+    dispatch(toggleOptionsTrue());
   };
 
   return (
@@ -85,6 +97,9 @@ const Search = () => {
                     </Card.Text>
                   </Card.Body>
                   <Routing />
+                  <Button className="moreBtn" onClick={handleSearchPOIs}>
+                    More
+                  </Button>
                 </Card>
               ))}
         </Modal.Body>

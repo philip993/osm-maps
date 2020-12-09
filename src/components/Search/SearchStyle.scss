@@ -13,7 +13,7 @@
 }
 
 #modal {
-  margin-top: 15%;
+  margin-top: 10%;
   #header {
     background-color: #2b2d2f;
     border: 1px solid #2b2d2f;
@@ -44,6 +44,13 @@
     #cardText {
       color: orange;
     }
+
+    .moreBtn {
+      width: 40%;
+      margin: auto;
+      margin-bottom: 4%;
+      background-color: darkorange;
+    }
   }
 }
 
@@ -57,7 +64,36 @@
     }
   }
   #modal {
-    margin-top: 15%;
+    margin-top: 7%;
+
+    #body {
+      #card {
+        .moreBtn {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1028px) and (max-width: 1800px) {
+  // .search {
+  //   #f {
+  //     .formInput {
+  //       margin-right: 10px;
+  //     }
+  //   }
+  // }
+  #modal {
+    // margin-top: 7%;
+
+    #body {
+      #card {
+        .moreBtn {
+          width: 30%;
+        }
+      }
+    }
   }
 }
 

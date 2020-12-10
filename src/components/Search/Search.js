@@ -10,7 +10,7 @@ import {
 } from './SearchActions';
 import { toggleModalOff, toggleModalOn } from '../Routing/RoutingActions';
 import Routing from '../Routing/Routing';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import {
   requestCreatePOISearch,
   toggleOptionsTrue,
@@ -98,7 +98,7 @@ const Search = () => {
                   </Card.Body>
                   <Routing />
                   <Button className="moreBtn" onClick={handleSearchPOIs}>
-                    More
+                    More <FontAwesomeIcon className="icon" icon={faEllipsisV} />
                   </Button>
                 </Card>
               ))}

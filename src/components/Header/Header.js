@@ -43,14 +43,18 @@ const Header = () => {
           <Link to="/about" className="link">
             About
           </Link>
+        </Navbar.Brand>
+
+        <Navbar.Brand id="option">
           {poiModal && searchText !== '' ? (
-            <Link onClick={handleModalVisibilty} className="link">
+            <Link onClick={handleModalVisibilty} className="linkPoi">
               POIs
             </Link>
           ) : (
             ''
           )}
         </Navbar.Brand>
+
         <div className="one">
           <Search />
         </div>

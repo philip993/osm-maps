@@ -10,11 +10,16 @@ import {
 } from './SearchActions';
 import { toggleModalOff, toggleModalOn } from '../Routing/RoutingActions';
 import Routing from '../Routing/Routing';
-import { faTimes, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTimes,
+  faEllipsisV,
+  faTimesCircle,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   requestCreatePOISearch,
   toggleOptionsTrue,
   poiModalNotVisible,
+  poiModalVisible,
 } from '../POI/POIActions';
 
 const Search = () => {
@@ -48,6 +53,11 @@ const Search = () => {
     dispatch(requestCreatePOISearch());
     dispatch(toggleModalOff());
     dispatch(toggleOptionsTrue());
+    dispatch(poiModalVisible());
+  };
+
+  const handleClearInput = () => {
+    dispatch(clearInputSearchText());
   };
 
   return (
@@ -63,6 +73,11 @@ const Search = () => {
           value={searchText}
           onChange={handleSearchInput}
           placeholder="e.g. Barcelona"
+        />
+        <FontAwesomeIcon
+          onClick={handleClearInput}
+          icon={faTimesCircle}
+          className="clearIcon"
         />
         <Button className="searchBtn" variant="info" type="submit">
           Search

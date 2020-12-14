@@ -7,6 +7,7 @@ import {
   TOGGLE_OPTIONS_FALSE,
   POI_MODAL_VISIBLE,
   POI_MODAL_NOT_VISIBLE,
+  CLEAR_POI_SEARCH_RESULT,
 } from './POIActionTypes';
 import axios from 'axios';
 
@@ -90,5 +91,11 @@ export const poiModalVisible = () => {
 export const poiModalNotVisible = () => {
   return {
     type: POI_MODAL_NOT_VISIBLE,
+  };
+};
+
+export const clearPoiSearchResult = () => {
+  return {
+    type: CLEAR_POI_SEARCH_RESULT,
   };
 };

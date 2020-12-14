@@ -7,6 +7,7 @@ import {
   TOGGLE_OPTIONS_FALSE,
   POI_MODAL_VISIBLE,
   POI_MODAL_NOT_VISIBLE,
+  CLEAR_POI_SEARCH_RESULT,
 } from './POIActionTypes';
 
 const initialState = {
@@ -16,6 +17,7 @@ const initialState = {
   poiSearchCategory: '',
   poiResult: null,
   poiModal: null,
+  poiPosition: null,
 };
 
 export const POIReducer = (state = initialState, action) => {
@@ -26,12 +28,14 @@ export const POIReducer = (state = initialState, action) => {
         poiObject: action.payload,
         poiError: false,
         poiPlaces: action.payload.features.map((t) => t),
+        poiPosition: true,
       };
     case FAILURE_CREATE_POI_SEARCH:
       return {
         ...state,
         poiObject: null,
         poiError: true,
+        poiPosition: false,
       };
     case SELECT_CATEGORY_FILTER:
       return {
@@ -62,6 +66,13 @@ export const POIReducer = (state = initialState, action) => {
       return {
         ...state,
         poiModal: false,
+      };
+    case CLEAR_POI_SEARCH_RESULT:
+      return {
+        ...state,
+        poiObject: [],
+        poiPlaces: [],
+        poiPosition: null,
       };
     default:
       return state;

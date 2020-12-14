@@ -20,6 +20,7 @@ import {
   toggleOptionsTrue,
   poiModalNotVisible,
   poiModalVisible,
+  clearPoiSearchResult,
 } from '../POI/POIActions';
 
 const Search = () => {
@@ -58,6 +59,7 @@ const Search = () => {
 
   const handleClearInput = () => {
     dispatch(clearInputSearchText());
+    dispatch(clearPoiSearchResult());
   };
 
   return (

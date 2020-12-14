@@ -15,6 +15,7 @@ const initialState = {
   routeSteps: [],
   wayPoint: [],
   showModal: false,
+  routePosition: null,
 };
 
 export const RoutingReducer = (state = initialState, action) => {
@@ -33,12 +34,14 @@ export const RoutingReducer = (state = initialState, action) => {
         routeDuration: action.payload.features[0].properties.summary.duration,
         routeLength: action.payload.features[0].properties.summary.distance,
         routeSteps: action.payload.features[0].properties.segments[0].steps,
+        routePosition: true,
       };
     case FAILURE_CREATE_ROUTE:
       return {
         ...state,
         routeObject: null,
         routeObjectError: true,
+        routePosition: false,
       };
     case GET_ROUTE_DIRECTIONS:
       return {

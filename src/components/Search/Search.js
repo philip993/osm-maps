@@ -8,7 +8,11 @@ import {
   inputSearchText,
   requestSearchText,
 } from './SearchActions';
-import { toggleModalOff, toggleModalOn } from '../Routing/RoutingActions';
+import {
+  toggleModalOff,
+  toggleModalOn,
+  clearRoutingSteps,
+} from '../Routing/RoutingActions';
 import Routing from '../Routing/Routing';
 import {
   faTimes,
@@ -59,6 +63,8 @@ const Search = () => {
 
   const handleClearInput = () => {
     dispatch(clearInputSearchText());
+    dispatch(clearPoiSearchResult());
+    dispatch(clearRoutingSteps());
     dispatch(clearPoiSearchResult());
   };
 

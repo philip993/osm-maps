@@ -6,11 +6,22 @@ import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Search from '../Search/Search';
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleOptionsTrue } from '../POI/POIActions';
 
 const Header = () => {
+  const { poiModal, searchText } = useSelector((state) => ({
+    ...state.POIReducer,
+    ...state.SearchReducer,
+  }));
+  const dispatch = useDispatch();
   const history = useHistory();
   const handleRedirect = () => {
     history.push('/');
+  };
+
+  const handleModalVisibilty = () => {
+    dispatch(toggleOptionsTrue());
   };
   return (
     <div className="header">
@@ -33,6 +44,17 @@ const Header = () => {
             About
           </Link>
         </Navbar.Brand>
+
+        <Navbar.Brand id="option">
+          {poiModal && searchText !== '' ? (
+            <Link onClick={handleModalVisibilty} className="linkPoi">
+              POIs
+            </Link>
+          ) : (
+            ''
+          )}
+        </Navbar.Brand>
+
         <div className="one">
           <Search />
         </div>

@@ -8,9 +8,24 @@ import {
   inputSearchText,
   requestSearchText,
 } from './SearchActions';
-import { toggleModalOff, toggleModalOn } from '../Routing/RoutingActions';
+import {
+  toggleModalOff,
+  toggleModalOn,
+  clearRoutingSteps,
+} from '../Routing/RoutingActions';
 import Routing from '../Routing/Routing';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTimes,
+  faEllipsisV,
+  faTimesCircle,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  requestCreatePOISearch,
+  toggleOptionsTrue,
+  poiModalNotVisible,
+  poiModalVisible,
+  clearPoiSearchResult,
+} from '../POI/POIActions';
 
 const Search = () => {
   const { searchObject, searchText, showModal } = useSelector((state) => ({
@@ -26,6 +41,7 @@ const Search = () => {
   const handleClearSearchInput = () => {
     dispatch(clearInputSearchText());
     dispatch(toggleModalOff());
+    dispatch(poiModalNotVisible());
   };
 
   const handleModalOff = () => {
@@ -36,6 +52,20 @@ const Search = () => {
     e.preventDefault();
     dispatch(requestSearchText());
     dispatch(toggleModalOn());
+  };
+
+  const handleSearchPOIs = () => {
+    dispatch(requestCreatePOISearch());
+    dispatch(toggleModalOff());
+    dispatch(toggleOptionsTrue());
+    dispatch(poiModalVisible());
+  };
+
+  const handleClearInput = () => {
+    dispatch(clearInputSearchText());
+    dispatch(clearPoiSearchResult());
+    dispatch(clearRoutingSteps());
+    dispatch(clearPoiSearchResult());
   };
 
   return (
@@ -51,6 +81,11 @@ const Search = () => {
           value={searchText}
           onChange={handleSearchInput}
           placeholder="e.g. Barcelona"
+        />
+        <FontAwesomeIcon
+          onClick={handleClearInput}
+          icon={faTimesCircle}
+          className="clearIcon"
         />
         <Button className="searchBtn" variant="info" type="submit">
           Search
@@ -85,6 +120,9 @@ const Search = () => {
                     </Card.Text>
                   </Card.Body>
                   <Routing />
+                  <Button className="moreBtn" onClick={handleSearchPOIs}>
+                    More <FontAwesomeIcon className="icon" icon={faEllipsisV} />
+                  </Button>
                 </Card>
               ))}
         </Modal.Body>

@@ -7,7 +7,8 @@
     width: 100%;
 
     .brand,
-    #two {
+    #two,
+    #option {
       .icon {
         height: 30px;
         width: 30px;
@@ -21,6 +22,16 @@
         text-decoration: none;
         color: #48aaad;
         font-weight: bold;
+
+        &:hover {
+          color: darkorange;
+        }
+      }
+      .linkPoi {
+        text-decoration: none;
+        color: #48aaad;
+        font-weight: bold;
+        margin-right: 1%;
 
         &:hover {
           color: darkorange;
@@ -45,18 +56,107 @@
 
       #two {
         float: right;
+
+        .link {
+          margin-right: -20%;
+        }
+      }
+
+      #option {
+        margin-left: 15%;
       }
     }
   }
 }
 
-@media all and (min-width: 721px) {
+@media all and (max-width: 280px) {
+  .header {
+    height: 128px;
+    width: 100%;
+    .navbar {
+      height: 128px;
+      width: 100%;
+      display: inline-block;
+
+      .brand {
+        float: left;
+
+        .link {
+          font-size: 1rem;
+        }
+      }
+
+      #two {
+        float: right;
+
+        .link {
+          margin-right: -20%;
+          font-size: 1rem;
+        }
+      }
+
+      #option {
+        margin-left: 0%;
+        .linkPoi {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 360px) {
+  .header {
+    height: 128px;
+    width: 100%;
+    .navbar {
+      height: 128px;
+      width: 100%;
+      display: inline-block;
+
+      .brand {
+        float: left;
+      }
+
+      #two {
+        float: right;
+
+        .link {
+          margin-right: -20%;
+        }
+      }
+
+      #option {
+        margin-left: 10%;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1201px) {
   .header {
     .navbar {
       .one {
         position: absolute;
         left: 50%;
         transform: translate(-50%, 0);
+      }
+    }
+  }
+}
+
+@media all and (min-width: 721px) and (max-width: 1200px) {
+  .header {
+    .navbar {
+      .one {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      #option {
+        position: absolute;
+        right: 0;
       }
     }
   }

@@ -5,15 +5,31 @@
     }
 
     .searchBtn {
+      margin-left: 2%;
       &:hover {
         box-shadow: 0px 0px 5px #fff;
+      }
+    }
+
+    .clearIcon {
+      margin-left: -11%;
+      margin-right: 4%;
+      margin-top: 1.5%;
+      width: 20px;
+      height: 20px;
+
+      color: #d9dddc;
+
+      &:hover {
+        color: #fa8072;
+        cursor: pointer;
       }
     }
   }
 }
 
 #modal {
-  margin-top: 15%;
+  margin-top: 10%;
   #header {
     background-color: #2b2d2f;
     border: 1px solid #2b2d2f;
@@ -44,6 +60,25 @@
     #cardText {
       color: orange;
     }
+
+    .moreBtn {
+      width: 40%;
+      margin: auto;
+      margin-bottom: 4%;
+      background-color: #ff8c00;
+      border: 1px solid #ff8c00;
+
+      &:hover {
+        background-color: orangered;
+        box-shadow: 0px 0px 5px #ff8c00;
+      }
+
+      .icon {
+        margin: auto;
+        margin-top: 3%;
+        float: right;
+      }
+    }
   }
 }
 
@@ -54,10 +89,44 @@
       .formInput {
         margin-right: 10px;
       }
+
+      .clearIcon {
+        margin-right: 3%;
+        margin-left: -12%;
+        margin-top: 1%;
+      }
     }
   }
   #modal {
-    margin-top: 15%;
+    margin-top: 7%;
+
+    #body {
+      #card {
+        .moreBtn {
+          width: 40%;
+
+          .icon {
+            margin-top: 3%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1028px) and (max-width: 1799px) {
+  #modal {
+    #body {
+      #card {
+        .moreBtn {
+          width: 30%;
+
+          .icon {
+            margin-top: 4%;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -80,9 +149,25 @@
         margin-top: 5%;
         width: 40%;
       }
+
+      .clearIcon {
+        margin-top: 5%;
+        margin-left: -10%;
+        margin-right: 3%;
+      }
     }
   }
   #modal {
     margin-top: 40%;
+
+    #body {
+      #card {
+        .moreBtn {
+          .icon {
+            margin-top: 5%;
+          }
+        }
+      }
+    }
   }
 }

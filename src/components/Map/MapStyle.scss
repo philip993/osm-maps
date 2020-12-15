@@ -17,18 +17,18 @@
 
 @media all and (min-width: 720px) and (max-width: 1400px) {
   .map {
+    height: calc(100vh - 64px);
     .mapContainer {
       width: 100%;
-      height: 600px;
     }
   }
 }
 
 @media all and (min-width: 1400px) {
   .map {
+    height: calc(100vh - 64px);
     .mapContainer {
       width: 100%;
-      height: 600px;
     }
   }
 }

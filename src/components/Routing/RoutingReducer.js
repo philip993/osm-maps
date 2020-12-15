@@ -4,6 +4,7 @@ import {
   GET_ROUTE_DIRECTIONS,
   TOGGLE_MODAL_STEPS_ON,
   TOGGLE_MODAL_STEPS_OFF,
+  CLEAR_ROUTING_STEPS,
 } from './RoutingActionTypes';
 
 const initialState = {
@@ -59,6 +60,14 @@ export const RoutingReducer = (state = initialState, action) => {
       return {
         ...state,
         showModal: false,
+      };
+    case CLEAR_ROUTING_STEPS:
+      return {
+        ...state,
+        routePosition: null,
+        routeObject: [],
+        routeSteps: [],
+        routeDirections: [],
       };
     default:
       return state;

@@ -4,6 +4,7 @@ import {
   GET_ROUTE_DIRECTIONS,
   TOGGLE_MODAL_STEPS_ON,
   TOGGLE_MODAL_STEPS_OFF,
+  CLEAR_ROUTING_STEPS,
 } from './RoutingActionTypes';
 import axios from 'axios';
 const API_KEY = '5b3ce3597851110001cf624814771ee0ac454870b5974cb43f300fed';
@@ -79,5 +80,11 @@ export const toggleModalOn = () => {
 export const toggleModalOff = () => {
   return {
     type: TOGGLE_MODAL_STEPS_OFF,
+  };
+};
+
+export const clearRoutingSteps = () => {
+  return {
+    type: CLEAR_ROUTING_STEPS,
   };
 };
